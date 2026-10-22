@@ -1,0 +1,394 @@
+
+/* ألوان وهوية شركة ICS */
+:root {
+    --green: #28584B;
+    --mint: #6CA69A;
+    --white: #FFFFFF;
+    --light-bg: #F7F9F8;
+    --text: #24352F;
+}
+
+/* إعدادات الصفحة */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--white);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+/* تنسيق الهيدر */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 7%;
+    border-bottom: 1px solid #E8EEEB;
+}
+
+/* اسم الشركة */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--green);
+}
+
+.brand-name {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.brand-description {
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+/* زر تغيير اللغة */
+.language-button {
+    background: transparent;
+    border: 1px solid var(--mint);
+    color: var(--green);
+    padding: 9px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* تنسيق المحتوى الرئيسي */
+main {
+    padding: 100px 7%;
+    background-color: var(--light-bg);
+    min-height: 420px;
+}
+
+main h1 {
+    color: var(--green);
+    font-size: 42px;
+    line-height: 1.5;
+    max-width: 650px;
+    margin-top: 0;
+}
+
+main p {
+    color: var(--text);
+    font-size: 17px;
+    max-width: 560px;
+}
+
+/* تحسين الموقع على الموبايل */
+@media (max-width: 768px) {
+
+    .site-header {
+        padding: 18px 5%;
+    }
+
+    .brand {
+        gap: 8px;
+    }
+
+    .brand-name {
+        font-size: 27px;
+    }
+
+    .brand-description {
+        font-size: 8px;
+    }
+
+    .language-button {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    main {
+        padding: 65px 5%;
+        min-height: auto;
+    }
+
+    main h1 {
+        font-size: 30px;
+        line-height: 1.6;
+    }
+
+    main p {
+        font-size: 15px;
+    }
+
+    .services {
+        padding: 50px 5% 65px;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .service-item {
+        gap: 14px;
+        padding: 23px 0;
+    }
+
+    .service-info h3 {
+        font-size: 18px;
+    }
+
+    .service-info p {
+        font-size: 13px;
+    }
+}
+
+/* صفحات خدمات الصيانة */
+.service-page {
+    padding: 90px 7%;
+    background-color: var(--light-bg);
+    min-height: 390px;
+}
+
+.service-page h1 {
+    color: var(--green);
+    font-size: 40px;
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 20px 0;
+}
+
+.service-page p {
+    max-width: 600px;
+    color: var(--text);
+    font-size: 17px;
+}
+
+.primary-button {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 12px 24px;
+    background-color: var(--green);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.primary-button:hover {
+    background-color: #1E4439;
+}
+
+.back-link {
+    color: var(--green);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.maintenance-section {
+    padding: 60px 7%;
+}
+
+.maintenance-section h2 {
+    color: var(--green);
+    font-size: 28px;
+}
+
+.maintenance-section p {
+    color: var(--text);
+}
+
+@media (max-width: 768px) {
+    .service-page {
+        padding: 60px 5%;
+    }
+
+    .service-page h1 {
+        font-size: 30px;
+    }
+
+    .service-page p {
+        font-size: 15px;
+    }
+
+    .maintenance-section {
+        padding: 45px 5%;
+    }
+}
+
+/* ICS — Modern Technology Identity */
+
+:root {
+    --green: #28584B;
+    --green-dark: #1D4036;
+    --mint: #6CA69A;
+    --white: #FFFFFF;
+    --light-bg: #F7F9F8;
+    --text: #24352F;
+    --border: #E1E9E5;
+}
+
+/* Modern header */
+.site-header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 6%;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(29, 64, 54, 0.035);
+}
+
+/* ICS brand */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    color: var(--green);
+    text-decoration: none;
+}
+
+.brand-name {
+    font-size: 39px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -2px;
+    direction: ltr;
+}
+
+.brand-description {
+    padding-right: 13px;
+    border-right: 2px solid var(--mint);
+    color: #607169;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.65;
+    letter-spacing: 1px;
+    direction: ltr;
+}
+
+/* Language button */
+.language-button {
+    padding: 10px 19px;
+    color: var(--green);
+    background: #FFFFFF;
+    border: 1px solid #C9DAD2;
+    border-radius: 7px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.language-button:hover {
+    color: #FFFFFF;
+    background: var(--green);
+    border-color: var(--green);
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        padding: 15px 18px;
+        gap: 12px;
+    }
+
+    .brand {
+        gap: 9px;
+    }
+
+    .brand-name {
+        font-size: 33px;
+    }
+
+    .brand-description {
+        padding-right: 9px;
+        font-size: 8px;
+    }
+
+    .language-button {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+}
+
+/* ICS Hero Call-to-Action */
+
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 30px;
+    padding: 15px 24px;
+    color: #FFFFFF;
+    background: #28584B;
+    border: 1px solid #28584B;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(40, 88, 75, 0.12);
+    transition: background 0.2s, transform 0.2s,
+                box-shadow 0.2s;
+}
+
+.hero-cta:hover {
+    background: #1D4036;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(40, 88, 75, 0.18);
+}
+
+.hero-cta span:last-child {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.hero-cta:focus-visible {
+    outline: 3px solid #6CA69A;
+    outline-offset: 4px;
+}
+
+/* ICS Technology Details */
+
+.services .service-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.services .service-item::after {
+    content: "";
+    position: absolute;
+    top: -32px;
+    left: -32px;
+    width: 95px;
+    height: 95px;
+    border: 1px solid rgba(108, 166, 154, 0.22);
+    border-radius: 18px;
+    transform: rotate(35deg);
+    pointer-events: none;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.services .service-item:hover::after {
+    transform: rotate(50deg) scale(1.12);
+    border-color: rgba(108, 166, 154, 0.65);
+}
+
+.services .service-number {
+    position: relative;
+    z-index: 1;
+}
+
+.services .service-info {
+    position: relative;
+    z-index: 1;
+}
+
+.services .service-arrow {
+    position: relative;
+    z-index: 1;
+}
+
