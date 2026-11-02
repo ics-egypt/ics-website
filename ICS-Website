@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>صيانة ماكينات عدّ النقود | ICS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <a href="index.html" class="brand">
+            <span class="brand-name">ICS</span>
+
+            <span class="brand-description">
+                INTERNATIONAL CENTER<br>
+                FOR SERVICE
+            </span>
+        </a>
+
+        <a href="index.html" class="back-link">
+            العودة للرئيسية
+        </a>
+
+    </header>
+
+    <main class="service-page">
+
+        <span class="section-label">01 / CASH COUNTING MACHINES</span>
+
+        <h1>صيانة ماكينات عدّ النقود</h1>
+
+        <p>
+            بنساعدك في فحص أعطال ماكينات عدّ النقود
+            وتحديد المشكلة تمهيدًا لطلب الصيانة.
+        </p>
+
+        <a href="#maintenance-request" class="primary-button">
+            ابدأ طلب الصيانة
+        </a>
+
+    </main>
+
+    <section class="maintenance-section" id="maintenance-request">
+
+        <h2>بيانات الجهاز والعطل</h2>
+
+        <p>
+            في الخطوة التالية هنضيف نموذجًا لتسجيل موديل الجهاز
+            ووصف العطل وبيانات التواصل.
+        </p>
+
+    </section>
+
+</body>
+</html>

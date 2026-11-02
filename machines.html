@@ -1,0 +1,866 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب صيانة ماكينات النقود | ICS</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .order-form {
+            display: none;
+            max-width: 720px;
+            margin-top: 35px;
+            padding: 25px;
+            background: #F7F9F8;
+            border: 1px solid #E1E9E5;
+            border-radius: 8px;
+        }
+
+        .order-form.visible {
+            display: block;
+        }
+
+        .form-field {
+            margin-bottom: 18px;
+        }
+
+        .form-field label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #28584B;
+        }
+
+        .form-field input,
+        .form-field select,
+        .form-field textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #CCD9D2;
+            border-radius: 4px;
+            background: #FFFFFF;
+            font: inherit;
+        }
+
+        .form-field textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .service-item {
+            cursor: pointer;
+        }
+        
+/* تحسين شكل كروت اختيار نوع الماكينة */
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 25px;
+    border: 1px solid #DCE6E0;
+    border-radius: 8px;
+    background: #FFFFFF;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.service-item:hover {
+    border-color: #6CA69A;
+    background: #F7F9F8;
+}
+
+.service-item:has(input[type="radio"]:checked) {
+    border: 2px solid #28584B;
+    background: #F0F6F3;
+}
+
+.service-info h3 {
+    margin-top: 0;
+    color: #28584B;
+}
+
+@media (max-width: 600px) {
+    .service-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+        .service-item input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #28584B;
+            flex-shrink: 0;
+        }
+
+/* إبراز سعر الصيانة */
+.service-info strong {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 7px 14px;
+    color: #28584B;
+    background: #EAF2EE;
+    border: 1px solid #D5E5DC;
+    border-radius: 4px;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+/* توضيح اختيار نوع الماكينة */
+.service-item input[type="radio"] {
+    margin-top: 5px;
+    accent-color: #28584B;
+    cursor: pointer;
+}
+        .service-info strong {
+            display: block;
+            margin-top: 8px;
+            color: #28584B;
+            font-size: 22px;
+        }
+
+        .order-summary {
+            padding: 15px;
+            margin-bottom: 25px;
+            background: #EAF2EE;
+            border-radius: 5px;
+            color: #28584B;
+        }
+
+        .form-note {
+            font-size: 14px;
+            color: #52665C;
+            margin: 20px 0;
+        }
+
+        .primary-button {
+            border: 0;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .section-label {
+            color: #6CA69A;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+        
+/* ICS Modern Maintenance Design */
+
+.service-page {
+    max-width: 1100px;
+    margin: 45px auto;
+    padding: 0 24px 60px;
+}
+
+.service-page h1 {
+    color: #28584B;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.5;
+    margin: 15px 0;
+    font-weight: 800;
+}
+
+.service-page > p {
+    color: #607169;
+    font-size: 17px;
+    line-height: 1.9;
+    max-width: 750px;
+}
+
+.maintenance-section {
+    margin-top: 40px;
+    padding: 30px;
+    background: #FFFFFF;
+    border: 1px solid #E1E9E5;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(40, 88, 75, 0.06);
+}
+
+.maintenance-section h2 {
+    color: #28584B;
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.service-list {
+    gap: 20px;
+    margin: 28px 0;
+}
+
+.service-item {
+    min-height: 150px;
+    padding: 26px;
+    border: 1px solid #DCE6E0;
+    border-radius: 12px;
+    transition: border-color 0.2s, background-color 0.2s,
+                box-shadow 0.2s, transform 0.2s;
+}
+
+.service-item:hover {
+    border-color: #6CA69A;
+    box-shadow: 0 8px 22px rgba(40, 88, 75, 0.08);
+    transform: translateY(-2px);
+}
+
+.service-item:has(input[type="radio"]:checked) {
+    border: 2px solid #28584B;
+    background: #F0F6F3;
+    box-shadow: 0 8px 24px rgba(40, 88, 75, 0.10);
+}
+
+.service-info h3 {
+    font-size: 21px;
+    line-height: 1.5;
+}
+
+.service-info p {
+    color: #607169;
+    line-height: 1.8;
+}
+
+.service-info strong {
+    margin-top: 14px;
+    padding: 8px 15px;
+    background: #EAF2EE;
+    border: 1px solid #D5E5DC;
+    border-radius: 8px;
+    font-size: 21px;
+}
+
+.order-form {
+    max-width: 100%;
+    margin-top: 30px;
+    padding: 30px;
+    background: #F7F9F8;
+    border: 1px solid #E1E9E5;
+    border-radius: 14px;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    outline: 2px solid #6CA69A;
+    outline-offset: 1px;
+    border-color: #28584B;
+}
+
+.primary-button {
+    padding: 14px 24px;
+    background: #28584B;
+    color: #FFFFFF;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.primary-button:hover {
+    background: #1E453A;
+    transform: translateY(-1px);
+}
+
+.order-summary {
+    padding: 20px;
+    border: 1px solid #D5E5DC;
+    border-radius: 10px;
+    line-height: 1.9;
+}
+
+@media (max-width: 600px) {
+    .service-page {
+        margin: 25px auto;
+        padding: 0 15px 40px;
+    }
+
+    .maintenance-section {
+        padding: 20px 15px;
+    }
+
+    .service-item {
+        padding: 20px 16px;
+    }
+
+    .order-form {
+        padding: 20px 15px;
+    }
+
+    .service-info h3 {
+        font-size: 19px;
+    }
+}
+
+/* ICS - Dark Technical Hero */
+
+.service-page {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 0 45px;
+    background: #F5F7F5;
+}
+
+.service-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 55px max(7%, calc((100% - 1100px) / 2)) 60px;
+    background: #17382F;
+    color: #FFFFFF;
+    border-bottom: 4px solid #6CA69A;
+}
+
+.service-hero::before,
+.service-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    border: 1px solid rgba(166, 232, 197, 0.18);
+    transform: rotate(35deg);
+}
+
+.service-hero::before {
+    width: 260px;
+    height: 260px;
+    top: -110px;
+    left: 8%;
+    border-radius: 32px;
+}
+
+.service-hero::after {
+    width: 180px;
+    height: 180px;
+    right: 5%;
+    bottom: -125px;
+    border-radius: 24px;
+}
+
+.hero-topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.service-hero .section-label {
+    color: #A6E8C5;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero-number {
+    color: #A6E8C5;
+    font-size: 12px;
+    letter-spacing: 1px;
+    direction: ltr;
+}
+
+.service-hero h1 {
+    position: relative;
+    margin: 0 0 18px;
+    color: #FFFFFF;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.service-hero p {
+    position: relative;
+    max-width: 580px;
+    margin: 0;
+    color: #D4E3DB;
+    font-size: 16px;
+    line-height: 2;
+}
+
+.hero-lines {
+    display: flex;
+    gap: 7px;
+    margin-top: 30px;
+}
+
+.hero-lines span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 10px;
+    background: #54796A;
+}
+
+.hero-lines span:first-child {
+    width: 48px;
+    background: #A6E8C5;
+}
+
+@media (max-width: 600px) {
+    .service-hero {
+        padding: 38px 22px 42px;
+    }
+
+    .service-hero h1 {
+        font-size: 34px;
+    }
+
+    .service-hero p {
+        font-size: 14px;
+    }
+
+    .service-hero::before {
+        left: -100px;
+    }
+}
+
+/* ICS - Clean Maintenance Cards */
+
+.maintenance-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 35px 24px 45px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.maintenance-section h2 {
+    color: #203D32;
+    font-size: 27px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.maintenance-section > p {
+    color: #62736A;
+    line-height: 1.9;
+}
+
+.service-list {
+    gap: 18px;
+    margin: 28px 0;
+}
+
+.service-item {
+    position: relative;
+    overflow: hidden;
+    min-height: 155px;
+    padding: 25px;
+    background: #FFFFFF;
+    border: 1px solid #DDE5E0;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(23, 56, 47, 0.035);
+    transition: border-color 0.2s, box-shadow 0.2s,
+                transform 0.2s, background 0.2s;
+}
+
+.service-item:hover {
+    border-color: #6CA69A;
+    box-shadow: 0 10px 26px rgba(23, 56, 47, 0.08);
+    transform: translateY(-3px);
+}
+
+.service-item:has(input[type="radio"]:checked) {
+    border: 2px solid #28584B;
+    background: #F0F6F2;
+    box-shadow: 0 8px 24px rgba(40, 88, 75, 0.09);
+}
+
+.service-info h3 {
+    color: #203D32;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.service-info p {
+    color: #62736A;
+    line-height: 1.8;
+}
+
+.service-info strong {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 8px 13px;
+    color: #28584B;
+    background: #EAF2EE;
+    border: 1px solid #D5E5DC;
+    border-radius: 6px;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.service-item input[type="radio"] {
+    accent-color: #28584B;
+}
+
+.order-form {
+    background: #FFFFFF;
+    border: 1px solid #DDE5E0;
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(23, 56, 47, 0.04);
+}
+
+@media (max-width: 600px) {
+    .maintenance-section {
+        padding: 28px 16px 35px;
+    }
+
+    .maintenance-section h2 {
+        font-size: 23px;
+    }
+
+    .service-item {
+        padding: 21px 17px;
+    }
+}
+
+/* Reuse the exact ICS geometric detail */
+
+.service-item {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.service-item::after {
+    content: "";
+    position: absolute;
+    top: -32px;
+    left: -32px;
+    width: 95px;
+    height: 95px;
+    border: 1px solid rgba(108, 166, 154, 0.22);
+    border-radius: 18px;
+    transform: rotate(35deg);
+    pointer-events: none;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.service-item:hover::after {
+    transform: rotate(50deg) scale(1.12);
+    border-color: rgba(108, 166, 154, 0.65);
+}
+
+/* ICS - Premium Price Tag */
+
+.service-info strong {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    padding: 10px 16px;
+    color: #28584B;
+    background: #EAF2EE;
+    border: 1px solid #C9DED3;
+    border-radius: 8px;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+    box-shadow: inset 3px 0 0 #6CA69A;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.service-item:hover .service-info strong {
+    background: #E2EFE8;
+    border-color: #A9CDBB;
+}
+
+@media (max-width: 600px) {
+    .service-info strong {
+        font-size: 20px;
+        padding: 9px 13px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-name">ICS</span>
+            <span class="brand-description">
+                INTERNATIONAL CENTER<br>
+                FOR SERVICE
+            </span>
+        </a>
+
+        <a href="index.html" class="back-link">العودة للرئيسية</a>
+    </header>
+
+
+<main class="service-page">
+    <div class="service-hero">
+        <div class="hero-topline">
+            <span class="section-label">ICS / MAINTENANCE</span>
+            <span class="hero-number">01 — 02</span>
+        </div>
+
+        <h1>صيانة ماكينات<br>عدّ النقود.</h1>
+
+        <p>
+            خدمة متخصصة تبدأ باختيار نوع الماكينة،
+            وتنتهي بطلب صيانة واضح وسهل.
+        </p>
+
+        <div class="hero-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</main>
+
+
+    <section class="maintenance-section">
+        <h2>اختار نوع الصيانة</h2>
+
+        <div class="service-list">
+
+            <label class="service-item">
+                <input type="radio" name="machineType"
+                       value="فئات" required>
+                <div class="service-info">
+                    <h3>صيانة ماكينة فئات</h3>
+                    <p>صيانة ماكينة عدّ النقود من فئة واحدة.</p>
+                    <strong>1,000 جنيه</strong>
+                </div>
+            </label>
+
+            <label class="service-item">
+                <input type="radio" name="machineType"
+                       value="ميكس" required>
+                <div class="service-info">
+                    <h3>صيانة ماكينة ميكس</h3>
+                    <p>صيانة ماكينة عدّ النقود المختلطة.</p>
+                    <strong>1,500 جنيه</strong>
+                </div>
+            </label>
+
+        </div>
+
+        <p class="form-note">
+            السعر مبدئي ويشمل الصيانة والشحن وخدمة الصيانة لدى العميل.
+            في حالة الحاجة إلى قطع غيار إضافية، يتم إبلاغ العميل
+            بالتكلفة والحصول على موافقته قبل تنفيذها.
+        </p>
+
+        <button class="primary-button" type="button"
+                onclick="continueRequest()">
+            استكمال طلب الصيانة
+        </button>
+
+        <p id="selectionMessage" role="status"></p>
+
+        <form id="orderForm" class="order-form"
+              onsubmit="sendOrder(event)">
+
+            <h2>بيانات طلب الصيانة</h2>
+
+            <div class="order-summary">
+                <strong id="selectedType"></strong>
+                <p id="selectedPrice"></p>
+            </div>
+
+            <div class="form-field">
+                <label for="customerName">اسم العميل أو الشركة *</label>
+                <input id="customerName" name="customerName"
+                       type="text" required
+                       placeholder="اكتب الاسم">
+            </div>
+
+            <div class="form-field">
+                <label for="phone">رقم الموبايل *</label>
+                <input id="phone" name="phone" type="tel"
+                       required inputmode="tel"
+                       placeholder="01XXXXXXXXX">
+            </div>
+
+            <div class="form-field">
+                <label for="governorate">المحافظة *</label>
+                <select id="governorate" name="governorate" required>
+                    <option value="">اختر المحافظة</option>
+                    <option>القاهرة</option>
+                    <option>الجيزة</option>
+                    <option>الإسكندرية</option>
+                    <option>القليوبية</option>
+                    <option>الشرقية</option>
+                    <option>الغربية</option>
+                    <option>المنوفية</option>
+                    <option>الدقهلية</option>
+                    <option>كفر الشيخ</option>
+                    <option>البحيرة</option>
+                    <option>دمياط</option>
+                    <option>بورسعيد</option>
+                    <option>الإسماعيلية</option>
+                    <option>السويس</option>
+                    <option>شمال سيناء</option>
+                    <option>جنوب سيناء</option>
+                    <option>بني سويف</option>
+                    <option>الفيوم</option>
+                    <option>المنيا</option>
+                    <option>أسيوط</option>
+                    <option>سوهاج</option>
+                    <option>قنا</option>
+                    <option>الأقصر</option>
+                    <option>أسوان</option>
+                    <option>البحر الأحمر</option>
+                    <option>الوادي الجديد</option>
+                    <option>مطروح</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="city">المدينة أو المنطقة *</label>
+                <input id="city" name="city" type="text"
+                       required placeholder="اكتب المدينة أو المنطقة">
+            </div>
+
+            <div class="form-field">
+                <label for="address">العنوان بالتفصيل *</label>
+                <textarea id="address" name="address" required
+                          placeholder="الشارع، رقم العقار، الدور، وأقرب علامة مميزة"></textarea>
+            </div>
+
+            <div class="form-field">
+                <label for="model">موديل الماكينة *</label>
+                <input id="model" name="model" type="text"
+                       required placeholder="اكتب موديل الماكينة">
+            </div>
+
+            <div class="form-field">
+                <label for="fault">وصف العطل *</label>
+                <textarea id="fault" name="fault" required
+                          placeholder="اشرح العطل اللي بيحصل في الماكينة"></textarea>
+            </div>
+
+            <p class="form-note">
+                بالضغط على تأكيد الأوردر، هيفتح واتساب برسالة تحتوي
+                على بيانات طلبك لإرسالها إلى مركز ICS. الطلب يحتاج
+                إلى مراجعة وتأكيد من المركز.
+            </p>
+
+            <button class="primary-button" type="submit">
+                تأكيد الأوردر عبر واتساب
+            </button>
+
+        </form>
+    </section>
+
+    <script>
+        const whatsappNumber = "201042822501";
+
+        function continueRequest() {
+            const selected = document.querySelector(
+                'input[name="machineType"]:checked'
+            );
+
+            const message = document.getElementById("selectionMessage");
+            const form = document.getElementById("orderForm");
+
+            if (!selected) {
+                message.textContent = "من فضلك اختار نوع الماكينة الأول.";
+                return;
+            }
+
+            const price = selected.value === "فئات"
+                ? "1,000 جنيه"
+                : "1,500 جنيه";
+
+            document.getElementById("selectedType").textContent =
+                "نوع الماكينة: " + selected.value;
+
+            document.getElementById("selectedPrice").textContent =
+                "السعر المبدئي: " + price;
+
+            form.classList.add("visible");
+            message.textContent = "";
+
+            form.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+
+        function sendOrder(event) {
+            event.preventDefault();
+
+            const form = document.getElementById("orderForm");
+
+            if (!form.reportValidity()) {
+                return;
+            }
+
+            const selected = document.querySelector(
+                'input[name="machineType"]:checked'
+            );
+
+            if (!selected) {
+                alert("من فضلك اختار نوع الماكينة.");
+                return;
+            }
+
+            const price = selected.value === "فئات"
+                ? "1,000 جنيه"
+                : "1,500 جنيه";
+
+            const data = {
+                name: document.getElementById("customerName").value.trim(),
+                phone: document.getElementById("phone").value.trim(),
+                governorate: document.getElementById("governorate").value,
+                city: document.getElementById("city").value.trim(),
+                address: document.getElementById("address").value.trim(),
+                model: document.getElementById("model").value.trim(),
+                fault: document.getElementById("fault").value.trim()
+            };
+
+            const message =
+`طلب صيانة جديد - ICS
+-------------------------
+اسم العميل/الشركة: ${data.name}
+رقم الموبايل: ${data.phone}
+نوع الماكينة: ${selected.value}
+السعر المبدئي: ${price}
+المحافظة: ${data.governorate}
+المدينة/المنطقة: ${data.city}
+العنوان بالتفصيل: ${data.address}
+موديل الماكينة: ${data.model}
+وصف العطل: ${data.fault}
+-------------------------
+يرجى التواصل مع العميل لمراجعة الطلب وتأكيده.
+السعر مبدئي، وأي تكلفة إضافية لقطع الغيار تستلزم موافقة العميل.`;
+
+            const whatsappURL =
+                "https://wa.me/" + whatsappNumber +
+                "?text=" + encodeURIComponent(message);
+
+            
+
+const whatsappWindow = window.open(whatsappURL, "_blank");
+
+if (!whatsappWindow) {
+    alert(
+        "المتصفح منع فتح واتساب. " +
+        "اسمح بالنوافذ المنبثقة للموقع ثم حاول مرة أخرى."
+    );
+}
+ {
+    alert(
+        "المتصفح منع فتح واتساب.\n" +
+        "اسمح بفتح النوافذ المنبثقة للموقع، ثم حاول مرة أخرى."
+    );
+}
+        }
+    </script>
+
+</body>
+</html>
