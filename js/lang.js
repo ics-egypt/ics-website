@@ -70,6 +70,25 @@ const translations = {
         safe_card_large: "خزنة مصفح بالكامل",
         safe_card_large_sub: "",
         
+        // About & FAQ
+        about_title: "من نحن",
+        about_text: "ICS هي جهة متخصصة في صيانة ماكينات عد النقود والخزن، وتقدم حلولاً فنية دقيقة مع دعم فني مستمر لخدمة العملاء في مختلف أنحاء مصر.",
+        about_point1: "خبرة ميدانية في صيانة الأجهزة الأمنية والمالية",
+        about_point2: "فريق متخصص وفنيين مدربين على أحدث الأنظمة",
+        about_point3: "خدمة سريعة مع متابعة دقيقة بعد التنفيذ",
+        faq_title: "الأسئلة الشائعة",
+        faq_q1: "هل تقدمون خدمة في الموقع؟",
+        faq_a1: "نعم، نقدم دعمًا فنيًا في موقع العميل مع متابعة فورية وإصلاحات عملية داخل الموقع.",
+        faq_q2: "هل تستخدمون قطع غيار أصلية؟",
+        faq_a2: "نعم، نستخدم قطع غيار مناسبة وجودة عالية للمنظومات المختلفة لضمان استقرار الأداء.",
+        faq_q3: "كم يستغرق الإصلاح؟",
+        faq_a3: "يعتمد على نوع الأعطال والآلة، لكننا نسعى لتقليل وقت التوقف وتوفير حلول عملية بسرعة.",
+        contact_title: "تواصل معنا",
+        contact_subtitle: "جاهزون لتقديم المساعدة في أسرع وقت",
+        contact_phone: "010-4282-2501",
+        contact_whatsapp: "واتساب",
+        contact_location: "جميع أنحاء مصر",
+
         // Footer
         footer_tagline: "ICS .. شريكك الموثوق في الصيانة والدعم الفني",
         footer_copy: "جميع الحقوق محفوظة ICS 2026 ©"
@@ -140,6 +159,25 @@ const translations = {
         safe_card_med_sub: "",
         safe_card_large: "Fully Armored Safe",
         safe_card_large_sub: "",
+
+        // About & FAQ
+        about_title: "About Us",
+        about_text: "ICS specializes in maintaining cash counting machines and safes, delivering precise technical solutions with continuous support for clients across Egypt.",
+        about_point1: "Field experience in maintaining financial and security systems",
+        about_point2: "Specialized technicians trained on the latest systems",
+        about_point3: "Fast service with careful follow-up after implementation",
+        faq_title: "Frequently Asked Questions",
+        faq_q1: "Do you provide on-site service?",
+        faq_a1: "Yes, we provide on-site technical support and direct repairs at customer locations.",
+        faq_q2: "Do you use original spare parts?",
+        faq_a2: "Yes, we use compatible and high-quality spare parts to maintain performance and reliability.",
+        faq_q3: "How long does repair take?",
+        faq_a3: "It depends on the fault and machine type, but we work to minimize downtime and provide practical solutions quickly.",
+        contact_title: "Contact Us",
+        contact_subtitle: "Ready to assist you as quickly as possible",
+        contact_phone: "010-4282-2501",
+        contact_whatsapp: "WhatsApp",
+        contact_location: "All across Egypt",
         
         // Footer
         footer_tagline: "ICS .. Your Trusted Partner in Maintenance & Technical Support",
