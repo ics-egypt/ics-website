@@ -34,6 +34,29 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* LTR Support */
+html[dir="ltr"] body {
+    direction: ltr;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+html[dir="ltr"] .site-header .main-nav {
+    flex-direction: row;
+}
+
+html[dir="ltr"] .top-bar-container {
+    flex-direction: row;
+}
+
+html[dir="ltr"] .card-content {
+    text-align: left;
+}
+
+html[dir="ltr"] .subpage-list-col {
+    text-align: left;
+}
+
 /* ========================================================
    1. Top Bar
 ======================================================== */
@@ -242,157 +265,81 @@ body {
 }
 
 /* ========================================================
-   3. Hero Section
+   3. Panoramic Hero Banners
 ======================================================== */
-.home-hero {
-    background: linear-gradient(180deg, #F9FBFA 0%, #FFFFFF 100%);
-    padding: 50px 5% 65px;
+.home-hero-banner-section,
+.subpage-banner-section {
+    background: #FFFFFF;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #E5EFEA;
 }
 
-.hero-container {
+.home-banner-container,
+.subpage-banner-container {
     max-width: 1300px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.15fr 1fr;
-    gap: 50px;
-    align-items: center;
 }
 
-/* Hero Text Column (Right) */
-.hero-text-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.hero-title-box {
-    display: flex;
-    align-items: stretch;
-    gap: 18px;
-}
-
-.hero-accent-line {
-    width: 4px;
-    background-color: var(--brand-dark-green);
-    border-radius: 4px;
-    flex-shrink: 0;
-}
-
-.hero-title-box h1 {
-    margin: 0;
-    color: var(--brand-dark-green);
-    font-size: clamp(34px, 3.8vw, 48px);
-    font-weight: 900;
-    line-height: 1.35;
-}
-
-.hero-subtitle {
-    margin: 22px 0 30px;
-    color: var(--brand-text-muted);
-    font-size: 17px;
-    line-height: 1.85;
-    max-width: 530px;
-    font-weight: 500;
-}
-
-.hero-btn-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background-color: var(--brand-dark-green);
-    color: var(--white);
-    padding: 13px 32px;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 6px 20px rgba(15, 56, 44, 0.22);
-    transition: all 0.25s ease;
-}
-
-.hero-btn-pill:hover {
-    background-color: var(--brand-dark-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(15, 56, 44, 0.3);
-}
-
-.btn-arrow {
-    font-size: 18px;
-    line-height: 1;
-    transition: transform 0.2s ease;
-}
-
-.hero-btn-pill:hover .btn-arrow {
-    transform: translateX(-4px);
-}
-
-/* Hero Image Column (Left) */
-.hero-image-col {
+.banner-wrapper {
     position: relative;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #FFFFFF;
-    box-shadow: 0 10px 35px rgba(15, 56, 44, 0.08);
-    border: 1px solid #E5EFEA;
-}
-
-.hero-image-wrapper {
     width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
 }
 
-.hero-img {
+.banner-full-img {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: contain;
+    object-fit: cover;
 }
 
-/* Slider Controls Overlay */
-.slider-indicator {
+/* Clickable hotspots over the CTA buttons inside banners */
+.banner-home-cta-overlay {
     position: absolute;
-    bottom: 18px;
-    left: 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(6px);
-    padding: 6px 16px;
-    border-radius: 25px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(223, 235, 228, 0.8);
+    bottom: 9%;
+    right: 8%;
+    width: 15%;
+    height: 18%;
+    min-height: 38px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background 0.2s;
+    z-index: 10;
 }
 
-.slider-counter {
-    font-size: 13px;
-    font-weight: 800;
-    color: var(--brand-dark-green);
-    letter-spacing: 0.5px;
-    direction: ltr;
+.banner-cta-overlay {
+    position: absolute;
+    bottom: 8%;
+    right: 14%;
+    width: 22%;
+    height: 16%;
+    min-height: 40px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background 0.2s;
+    z-index: 10;
 }
 
-.slider-dots {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+.banner-home-cta-overlay:hover,
+.banner-cta-overlay:hover {
+    background: rgba(255, 255, 255, 0.15);
 }
 
-.dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background-color: #CADCD3;
-    transition: all 0.25s ease;
-}
+@media (max-width: 768px) {
+    .banner-home-cta-overlay {
+        bottom: 7%;
+        right: 6%;
+        width: 24%;
+        height: 20%;
+    }
 
-.dot.active {
-    width: 18px;
-    border-radius: 10px;
-    background-color: var(--brand-dark-green);
+    .banner-cta-overlay {
+        bottom: 7%;
+        right: 12%;
+        width: 30%;
+        height: 18%;
+    }
 }
 
 /* ========================================================
@@ -443,7 +390,7 @@ body {
 }
 
 /* ========================================================
-   5. Services Section
+   5. Services Section (Homepage)
 ======================================================== */
 .services-showcase {
     background-color: var(--brand-bg-light);
@@ -504,7 +451,6 @@ body {
     border-color: #C3DAD0;
 }
 
-/* Corner decor */
 .card-corner-decor {
     position: absolute;
     top: 0;
@@ -589,7 +535,139 @@ body {
 }
 
 /* ========================================================
-   6. Footer
+   6. Subpage Detail Sections (machines.html, safes.html)
+======================================================== */
+.subpage-detail-section {
+    background-color: var(--brand-bg-light);
+    padding: 55px 5% 75px;
+}
+
+.subpage-detail-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.subpage-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.subpage-list-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.feature-check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.feature-check-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--brand-text-dark);
+}
+
+.check-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--brand-dark-green);
+    color: var(--white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.hero-btn-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--brand-dark-green);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.hero-btn-pill:hover {
+    background-color: var(--brand-dark-hover);
+}
+
+.subpage-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.sub-prod-card {
+    background-color: var(--white);
+    border: 1px solid var(--brand-border);
+    border-radius: 12px;
+    padding: 16px 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+}
+
+.sub-prod-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(15, 56, 44, 0.08);
+    border-color: #CADCD3;
+}
+
+.sub-prod-img {
+    width: 100%;
+    height: 95px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.sub-prod-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--brand-text-dark);
+    margin: 0 0 3px;
+}
+
+.sub-prod-subtitle {
+    font-size: 12px;
+    color: var(--brand-text-muted);
+    font-weight: 600;
+    margin: 0 0 8px;
+}
+
+.sub-price-pill {
+    background-color: var(--brand-dark-green);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* ========================================================
+   7. Footer
 ======================================================== */
 .site-footer {
     background-color: var(--brand-dark-green);
@@ -718,17 +796,8 @@ body {
         border-top: 1px solid #EDF3F0;
     }
 
-    .home-hero {
-        padding: 35px 5% 45px;
-    }
-
-    .hero-container {
+    .subpage-content-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .hero-image-col {
-        order: -1;
     }
 
     .services-cards-grid {
@@ -759,14 +828,6 @@ body {
         gap: 10px;
     }
 
-    .hero-title-box h1 {
-        font-size: 27px;
-    }
-
-    .hero-subtitle {
-        font-size: 14px;
-    }
-
     .service-card {
         padding: 20px;
         flex-direction: column-reverse;
@@ -782,165 +843,12 @@ body {
         height: 110px;
     }
 
+    .subpage-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
     .trust-item {
         flex: 1 1 100%;
         justify-content: flex-start;
     }
 }
-
-/* ========================================================
-   Subpage Full Banners (machines.html, safes.html)
-======================================================== */
-.subpage-banner-section {
-    background: #FFFFFF;
-    width: 100%;
-    overflow: hidden;
-    border-bottom: 1px solid #E5EFEA;
-}
-
-.subpage-banner-container {
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-.banner-wrapper {
-    position: relative;
-    width: 100%;
-    display: block;
-}
-
-.banner-full-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-.banner-cta-overlay {
-    position: absolute;
-    bottom: 9%;
-    right: 14%;
-    width: 22%;
-    height: 15%;
-    min-height: 40px;
-    cursor: pointer;
-    border-radius: 30px;
-    transition: background 0.2s;
-    z-index: 10;
-}
-
-.banner-cta-overlay:hover {
-    background: rgba(255, 255, 255, 0.15);
-}
-
-@media (max-width: 768px) {
-    .banner-cta-overlay {
-        bottom: 8%;
-        right: 12%;
-        width: 30%;
-        height: 18%;
-    }
-}
-
-
-/* Subpage Detail Section */
-.subpage-detail-section {
-    background-color: var(--brand-bg-light);
-    padding: 55px 5% 75px;
-}
-
-.subpage-detail-container {
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-.subpage-content-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.6fr;
-    gap: 35px;
-    align-items: center;
-}
-
-.subpage-list-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.subpage-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-}
-
-.sub-prod-card {
-    background-color: var(--white);
-    border: 1px solid var(--brand-border);
-    border-radius: 12px;
-    padding: 16px 12px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-    transition: all 0.2s ease;
-}
-
-.sub-prod-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(15, 56, 44, 0.08);
-    border-color: #CADCD3;
-}
-
-.sub-prod-img {
-    width: 100%;
-    height: 95px;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-.sub-prod-title {
-    font-size: 14px;
-    font-weight: 800;
-    color: var(--brand-text-dark);
-    margin: 0 0 3px;
-}
-
-.sub-prod-subtitle {
-    font-size: 12px;
-    color: var(--brand-text-muted);
-    font-weight: 600;
-    margin: 0 0 8px;
-}
-
-.sub-price-pill {
-    background-color: var(--brand-dark-green);
-    color: var(--white);
-    font-size: 12px;
-    font-weight: 700;
-    padding: 4px 14px;
-    border-radius: 20px;
-    display: inline-block;
-}
-
-@media (max-width: 880px) {
-    .subpage-hero-container {
-        grid-template-columns: 1fr;
-    }
-
-    .subpage-content-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .subpage-cards-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .subpage-cards-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
