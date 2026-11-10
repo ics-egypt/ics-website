@@ -1,59 +1,246 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>صيانة الخزن | ICS</title>
-
-    <link rel="stylesheet" href="css/style.css?v=2.1">
+    <meta name="theme-color" content="#0F382C">
+    <meta name="description" content="صيانة الخزن | ICS - المركز الدولي للصيانة.">
+    <title>الخزن | ICS</title>
+    
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css?v=2.2">
 </head>
 
 <body>
 
+    <!-- 1. Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-social">
+                <a href="https://www.facebook.com/share/1DkDc1AQMz/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7v-3h3V9.5C10 6.46 11.82 5 14.54 5c1.3 0 2.66.23 2.66.23v2.92h-1.5c-1.5 0-1.97.94-1.97 1.9V12h3.3l-.53 3h-2.77v6.8c4.56-.93 8-4.96 8-9.8z"/></svg>
+                </a>
+                <a href="#" aria-label="YouTube" class="social-icon">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/></svg>
+                </a>
+                <a href="https://wa.me/201042822501" target="_blank" aria-label="WhatsApp" class="social-icon">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.53c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29z"/></svg>
+                </a>
+            </div>
+
+            <div class="top-bar-info">
+                <span class="info-item">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    جميع أنحاء مصر
+                </span>
+                <span class="top-bar-divider">|</span>
+                <span class="info-item">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg>
+                    دعم فني متخصص
+                </span>
+                <span class="top-bar-divider">|</span>
+                <a href="tel:01042822501" class="top-bar-phone">
+                    <span class="phone-icon-wrap">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.053 15.053 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 3.93c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.55c0-.55-.45-1-1-1z"/></svg>
+                    </span>
+                    010-1234-5678
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Navbar -->
     <header class="site-header">
+        <div class="header-container">
+            <div class="header-left">
+                <button class="language-pill" type="button">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <span>English</span>
+                </button>
+            </div>
 
-        <a href="index.html" class="brand">
-            <span class="brand-name">ICS</span>
+            <nav class="main-nav">
+                <a href="index.html#contact">تواصل معنا</a>
+                <a href="index.html#faq">الأسئلة الشائعة</a>
+                <a href="index.html#about">من نحن</a>
+                <a href="index.html#our-services" class="nav-has-dropdown nav-item-active">
+                    خدماتنا
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+                <a href="index.html">الرئيسية</a>
+            </nav>
 
-            <span class="brand-description">
-                INTERNATIONAL CENTER<br>
-                FOR SERVICE
-            </span>
-        </a>
-
-        <a href="index.html" class="back-link">
-            العودة للرئيسية
-        </a>
-
+            <a href="index.html" class="brand-logo">
+                <div class="brand-title">
+                    <span class="brand-letters">ICS</span>
+                    <svg class="brand-gear" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                        <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                    </svg>
+                </div>
+                <span class="brand-subtitle">International Center for Service</span>
+            </a>
+        </div>
     </header>
 
-    <main class="service-page">
+    <!-- 3. Subpage Hero Section -->
+    <section class="subpage-hero">
+        <div class="subpage-hero-container">
+            <!-- Left in RTL: Image -->
+            <div class="subpage-hero-img-box">
+                <img src="images/hero-safe.jpg" alt="صيانة الخزن من ICS">
+            </div>
 
-        <h1>صيانة الخزن</h1>
+            <!-- Right in RTL: Content -->
+            <div class="subpage-hero-text">
+                <h1>الخزن</h1>
+                <p class="subpage-hero-subtitle">أمان أعلى .. لبياناتك وقيمتك</p>
 
-        <p>
-            خدمات صيانة متخصصة للخزن،
-            مع الاهتمام بجودة الخدمة والحفاظ على أمان ممتلكاتك.
-        </p>
+                <ul class="feature-check-list">
+                    <li>
+                        <span class="check-circle">✓</span>
+                        <span>صيانة متخصصة لجميع أنواع الخزن</span>
+                    </li>
+                    <li>
+                        <span class="check-circle">✓</span>
+                        <span>فحص شامل وضمان على الخدمة</span>
+                    </li>
+                    <li>
+                        <span class="check-circle">✓</span>
+                        <span>حلول آمنة وموثوقة</span>
+                    </li>
+                </ul>
 
-        <a href="#maintenance-request" class="primary-button">
-            ابدأ طلب الصيانة
-        </a>
-
-    </main>
-
-    <section class="maintenance-section" id="maintenance-request">
-
-        <h2>بيانات الخزنة والعطل</h2>
-
-        <p>
-            هنا هتقدر تسجل نوع الخزنة ووصف العطل
-            وبيانات التواصل في الخطوات القادمة.
-        </p>
-
+                <a href="https://wa.me/201042822501?text=مرحباً%20ICS،%20أريد%20طلب%20صيانة%20للخزن" target="_blank" class="hero-btn-pill">
+                    اطلب صيانة الآن
+                    <span class="btn-arrow">←</span>
+                </a>
+            </div>
+        </div>
     </section>
+
+    <!-- 4. Trust Strip -->
+    <section class="trust-strip">
+        <div class="trust-container">
+            <div class="trust-item">
+                <span class="trust-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></span>
+                <span class="trust-text">جودة مضمونة في كل خدمة</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+                <span class="trust-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg></span>
+                <span class="trust-text">استجابة سريعة ودعم فني محترف</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+                <span class="trust-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg></span>
+                <span class="trust-text">خبرة تمتد لسنوات في مجال الصيانة</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+                <span class="trust-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M10.59 13.41c.41.39 1.02.59 1.63.59s1.22-.2 1.63-.59l1.41-1.41 1.41 1.41-2.12 2.12c-.59.59-1.38.88-2.17.88s-1.58-.29-2.17-.88l-4.24-4.24c-.59-.59-.88-1.38-.88-2.17s.29-1.58.88-2.17l2.12-2.12 1.41 1.41-1.41 1.41 2.44 2.45zm8.49-4.24l-2.12-2.12-1.41 1.41 1.41 1.41-2.44 2.45c-.41-.39-1.02-.59-1.63-.59s-1.22.2-1.63.59l-1.41 1.41-1.41-1.41 2.12-2.12c.59-.59 1.38-.88 2.17-.88s1.58.29 2.17.88l4.24 4.24c.59.59.88 1.38.88 2.17s-.29 1.58-.88 2.17l-2.12 2.12-1.41-1.41 1.41-1.41-2.44-2.45c.41.39 1.02.59 1.63.59s1.22-.2 1.63-.59l1.41-1.41 1.41 1.41-2.12 2.12c-.59.59-1.38.88-2.17.88s-1.58-.29-2.17-.88l-4.24-4.24c-.59-.59-.88-1.38-.88-2.17s.29-1.58.88-2.17l2.12-2.12 1.41 1.41-1.41 1.41 2.44 2.45z"/></svg></span>
+                <span class="trust-text">شراكة نثق بها مع عملائنا</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Services Details & Cards -->
+    <section class="subpage-detail-section">
+        <div class="subpage-detail-container">
+            <div class="section-title-wrap">
+                <div class="decor-line"></div>
+                <h2>خدمات صيانة الخزن</h2>
+                <div class="decor-line"></div>
+            </div>
+
+            <div class="subpage-content-grid">
+                <!-- Left in RTL: 3 Safe Cards -->
+                <div class="subpage-cards-grid">
+                    <!-- Card 1: Small Safes -->
+                    <div class="sub-prod-card">
+                        <img src="images/safe-small.jpg" alt="خزن صغيرة منازل ومكاتب" class="sub-prod-img">
+                        <div class="sub-prod-title">خزن صغيرة</div>
+                        <div class="sub-prod-subtitle">(منازل ومكاتب)</div>
+                    </div>
+
+                    <!-- Card 2: Medium Safes -->
+                    <div class="sub-prod-card">
+                        <img src="images/safe-medium.jpg" alt="خزن متوسطة شركات ومحلات" class="sub-prod-img">
+                        <div class="sub-prod-title">خزن متوسطة</div>
+                        <div class="sub-prod-subtitle">(شركات ومحلات)</div>
+                    </div>
+
+                    <!-- Card 3: Large Safes -->
+                    <div class="sub-prod-card">
+                        <img src="images/safe-large.jpg" alt="خزن كبيرة بنوك ومؤسسات" class="sub-prod-img">
+                        <div class="sub-prod-title">خزن كبيرة</div>
+                        <div class="sub-prod-subtitle">(بنوك ومؤسسات)</div>
+                    </div>
+                </div>
+
+                <!-- Right in RTL: Checklist & Button -->
+                <div class="subpage-list-col">
+                    <ul class="feature-check-list">
+                        <li>
+                            <span class="check-circle">✓</span>
+                            <span>صيانة الأقفال الإلكترونية والميكانيكية</span>
+                        </li>
+                        <li>
+                            <span class="check-circle">✓</span>
+                            <span>معالجة الأعطال المختلفة</span>
+                        </li>
+                        <li>
+                            <span class="check-circle">✓</span>
+                            <span>تحديث الأنظمة الأمنية</span>
+                        </li>
+                        <li>
+                            <span class="check-circle">✓</span>
+                            <span>دعم فني في موقع العميل</span>
+                        </li>
+                    </ul>
+
+                    <div>
+                        <a href="https://wa.me/201042822501?text=مرحباً%20ICS،%20أريد%20التواصل%20بخصوص%20صيانة%20الخزن" target="_blank" class="hero-btn-pill">
+                            تواصل معنا الآن
+                            <span class="btn-arrow">←</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="brand-letters">ICS</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                    </svg>
+                </div>
+                <span class="footer-subtitle">International Center for Service</span>
+            </div>
+
+            <div class="footer-center">
+                <span>ICS .. شريكك الموثوق في الصيانة والدعم الفني</span>
+            </div>
+
+            <div class="footer-right">
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/1DkDc1AQMz/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7v-3h3V9.5C10 6.46 11.82 5 14.54 5c1.3 0 2.66.23 2.66.23v2.92h-1.5c-1.5 0-1.97.94-1.97 1.9V12h3.3l-.53 3h-2.77v6.8c4.56-.93 8-4.96 8-9.8z"/></svg></a>
+                    <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/></svg></a>
+                    <a href="https://wa.me/201042822501" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.53c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29z"/></svg></a>
+                </div>
+                <span class="footer-divider">|</span>
+                <span class="footer-copy">جميع الحقوق محفوظة ICS 2026 ©</span>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
