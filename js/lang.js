@@ -49,8 +49,8 @@ const translations = {
         mach_card_value: "فئات",
         mach_card_all: "أجهزة عدّ النقود",
         mach_card_all_sub: "بمختلف الأنواع",
-        price_mix: "من 1500 جنية",
-        price_value: "من 1000 جنية",
+        price_mix: "أسعار الصيانة تبدأ بسعر 1500 جنيه",
+        price_value: "أسعار الصيانة تبدأ بسعر 1000 جنيه",
         
         // Safes page
         safe_title: "الخزن",
@@ -63,12 +63,12 @@ const translations = {
         safe_feat2: "معالجة الأعطال المختلفة",
         safe_feat3: "تحديث الأنظمة الأمنية",
         safe_feat4: "دعم فني في موقع العميل",
-        safe_card_small: "خزن صغيرة",
-        safe_card_small_sub: "(منازل ومكاتب)",
-        safe_card_med: "خزن متوسطة",
-        safe_card_med_sub: "(شركات ومحلات)",
-        safe_card_large: "خزن كبيرة",
-        safe_card_large_sub: "(بنوك ومؤسسات)",
+        safe_card_small: "خزنة فندقي",
+        safe_card_small_sub: "",
+        safe_card_med: "خزنة نصف تصفيح",
+        safe_card_med_sub: "",
+        safe_card_large: "خزنة مصفح بالكامل",
+        safe_card_large_sub: "",
         
         // Footer
         footer_tagline: "ICS .. شريكك الموثوق في الصيانة والدعم الفني",
@@ -120,8 +120,8 @@ const translations = {
         mach_card_value: "Value Counter",
         mach_card_all: "Cash Counters",
         mach_card_all_sub: "All Types & Brands",
-        price_mix: "From 1,500 EGP",
-        price_value: "From 1,000 EGP",
+        price_mix: "Maintenance starts from 1,500 EGP",
+        price_value: "Maintenance starts from 1,000 EGP",
         
         // Safes page
         safe_title: "Safes & Vaults",
@@ -134,12 +134,12 @@ const translations = {
         safe_feat2: "Troubleshooting keypad & motor failures",
         safe_feat3: "Security system upgrades & reset",
         safe_feat4: "On-site emergency technician visits",
-        safe_card_small: "Small Safes",
-        safe_card_small_sub: "(Homes & Offices)",
-        safe_card_med: "Medium Safes",
-        safe_card_med_sub: "(Companies & Shops)",
-        safe_card_large: "Large Safes",
-        safe_card_large_sub: "(Banks & Institutions)",
+        safe_card_small: "Hotel Safe",
+        safe_card_small_sub: "",
+        safe_card_med: "Semi-Armored Safe",
+        safe_card_med_sub: "",
+        safe_card_large: "Fully Armored Safe",
+        safe_card_large_sub: "",
         
         // Footer
         footer_tagline: "ICS .. Your Trusted Partner in Maintenance & Technical Support",
