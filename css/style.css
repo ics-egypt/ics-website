@@ -22,6 +22,11 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -32,6 +37,20 @@ body {
     direction: rtl;
     text-align: right;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Prevent grid blowout from min-content defaults */
+.faq-item,
+.service-card,
+.sub-prod-card,
+.info-copy,
+.info-visual,
+.contact-copy,
+.contact-card {
+    min-width: 0;
 }
 
 /* LTR Support */
@@ -1002,7 +1021,7 @@ html[dir="ltr"] .subpage-list-col {
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 14px;
+        gap: 12px;
         padding-top: 10px;
         border-top: 1px solid #EDF3F0;
     }
@@ -1013,6 +1032,23 @@ html[dir="ltr"] .subpage-list-col {
 
     .services-cards-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Fix 2-column info and contact grids on tablet/mobile */
+    .info-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* Fix 3-column FAQ blowout that caused page overflow */
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .subpage-cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
 
     .footer-container {
@@ -1027,16 +1063,68 @@ html[dir="ltr"] .subpage-list-col {
 }
 
 @media (max-width: 600px) {
+    .top-bar {
+        padding: 8px 4%;
+        overflow: hidden;
+    }
+
     .top-bar-container {
         flex-direction: column;
         gap: 8px;
         text-align: center;
     }
 
+    .top-bar-divider {
+        display: none;
+    }
+
     .top-bar-info {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 8px 12px;
+    }
+
+    .info-item {
+        font-size: 12px;
+    }
+
+    .top-bar-phone {
+        font-size: 13px;
+    }
+
+    .main-nav {
+        gap: 8px 10px;
+        padding-top: 8px;
+    }
+
+    .main-nav a {
+        font-size: 13.5px;
+    }
+
+    .nav-item-active {
+        padding: 5px 16px;
+        font-size: 13.5px;
+    }
+
+    .section-title-wrap {
+        gap: 12px;
+        margin-bottom: 28px;
+    }
+
+    .section-title-wrap h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .decor-line {
+        width: 35px;
+    }
+
+    .info-copy h3,
+    .faq-header h3,
+    .contact-copy h3 {
+        font-size: 24px;
+        text-align: center;
     }
 
     .service-card {
@@ -1061,5 +1149,43 @@ html[dir="ltr"] .subpage-list-col {
     .trust-item {
         flex: 1 1 100%;
         justify-content: flex-start;
+    }
+}
+
+@media (max-width: 420px) {
+    .header-container {
+        padding: 10px 4%;
+    }
+
+    .brand-letters {
+        font-size: 30px;
+    }
+
+    .brand-subtitle {
+        font-size: 9px;
+    }
+
+    .language-pill {
+        padding: 5px 12px;
+        font-size: 12px;
+    }
+
+    .main-nav {
+        gap: 6px 8px;
+    }
+
+    .main-nav a {
+        font-size: 12.5px;
+    }
+
+    .nav-item-active {
+        padding: 4px 12px;
+        font-size: 12.5px;
+    }
+
+    .info-stat {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
     }
 }
