@@ -346,12 +346,88 @@ html[dir="ltr"] .subpage-list-col {
     background: rgba(255, 255, 255, 0.15);
 }
 
+/* Desktop / Mobile Hero Visibility */
+.desktop-only-hero {
+    display: block;
+}
+
+.mobile-only-hero {
+    display: none;
+}
+
+/* Mobile Hero Component */
+.home-hero-mobile {
+    background: #FFFFFF;
+    border-bottom: 1px solid #E5EFEA;
+}
+
+.hero-mobile-visual {
+    width: 100%;
+    overflow: hidden;
+    background: #EEF3F0;
+    border-bottom: 1px solid #DFE8E3;
+}
+
+.hero-mobile-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.hero-mobile-content {
+    padding: 26px 6% 30px;
+    text-align: center;
+    background: linear-gradient(180deg, #F9FBFA 0%, #FFFFFF 100%);
+}
+
+.hero-mobile-title {
+    font-size: 26px;
+    line-height: 1.35;
+    font-weight: 900;
+    color: var(--brand-dark-green);
+    margin: 0 0 12px;
+    letter-spacing: -0.3px;
+}
+
+.hero-mobile-desc {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--brand-text-muted);
+    font-weight: 500;
+    margin: 0 auto 22px;
+    max-width: 440px;
+}
+
+.hero-mobile-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--brand-dark-green);
+    color: var(--white);
+    padding: 13px 34px;
+    border-radius: 30px;
+    font-size: 15.5px;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(15, 56, 44, 0.18);
+    transition: all 0.2s ease;
+}
+
+.hero-mobile-btn:hover,
+.hero-mobile-btn:active {
+    background-color: var(--brand-dark-hover);
+    transform: translateY(-1px);
+}
+
 @media (max-width: 768px) {
-    .banner-home-cta-overlay {
-        bottom: 7%;
-        right: 6%;
-        width: 24%;
-        height: 20%;
+    .desktop-only-hero {
+        display: none !important;
+    }
+
+    .mobile-only-hero {
+        display: block !important;
     }
 
     .banner-cta-overlay {
@@ -1187,5 +1263,18 @@ html[dir="ltr"] .subpage-list-col {
         flex-direction: column;
         align-items: flex-start;
         gap: 4px;
+    }
+
+    .hero-mobile-title {
+        font-size: 22px;
+    }
+
+    .hero-mobile-desc {
+        font-size: 13.5px;
+    }
+
+    .hero-mobile-btn {
+        padding: 11px 26px;
+        font-size: 14.5px;
     }
 }

@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/style.css?v=4.1">
+    <link rel="stylesheet" href="css/style.css?v=4.2">
 </head>
 
 <body>
@@ -94,9 +94,25 @@
     <!-- 3. Full Hero Banner Section -->
     <main class="home-hero-banner-section">
         <div class="home-banner-container">
-            <div class="banner-wrapper">
-                <img src="images/banner-home.jpg?v=4.0" alt="صيانة تحافظ على استمرارية أعمالك - ICS" class="banner-full-img">
+            <!-- Desktop Panoramic Banner -->
+            <div class="banner-wrapper desktop-only-hero">
+                <img src="images/banner-home.jpg?v=4.2" alt="صيانة تحافظ على استمرارية أعمالك - ICS" class="banner-full-img">
                 <a href="#our-services" class="banner-home-cta-overlay" aria-label="اكتشف خدماتنا"></a>
+            </div>
+
+            <!-- Mobile Professional Hero Section -->
+            <div class="home-hero-mobile mobile-only-hero">
+                <div class="hero-mobile-visual">
+                    <img src="images/hero-visual-mobile.jpg?v=4.2" alt="صيانة ماكينات عد النقود والخزن - ICS" class="hero-mobile-img">
+                </div>
+                <div class="hero-mobile-content">
+                    <h1 class="hero-mobile-title" data-i18n="hero_title">صيانة تحافظ على<br>استمرارية أعمالك.</h1>
+                    <p class="hero-mobile-desc" data-i18n="hero_subtitle">حلول متخصصة لصيانة ماكينات عدّ النقود والخزن، باهتمام بالتفاصيل وجودة الخدمة.</p>
+                    <a href="#our-services" class="hero-mobile-btn">
+                        <span data-i18n="hero_cta">اكتشف خدماتنا</span>
+                        <span class="btn-arrow">←</span>
+                    </a>
+                </div>
             </div>
         </div>
     </main>
